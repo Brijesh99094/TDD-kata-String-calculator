@@ -1,3 +1,4 @@
+
 class StringCalculator:
 
     def add(self, string_number):
@@ -14,6 +15,8 @@ class StringCalculator:
                         lst.append(num)
                     else:
                         raise ValueError("Negative not allowed")
+                elif int(i) < 0:
+                    raise ValueError("Negative value not allowed")
                 else:
                     lst.append(int(i))
             return sum(lst)
