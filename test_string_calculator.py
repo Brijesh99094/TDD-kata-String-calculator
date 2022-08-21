@@ -45,5 +45,5 @@ class StringCalculatorTest(unittest.TestCase):
 
     # delimiter must be take from the string itself
     def test_with_defined_delimiter_in_string_number(self):
-        self.assertEqual(self.sc.add("//;\n1;2;3;4;5;6;7;8;9;10"), 55,
+        self.assertEqual(self.sc.add("//;;\n1;;2;;3;;4;;5;;6;;7;;8;;9;;10"), 55,
                          "Must return sum with defined delimiter")

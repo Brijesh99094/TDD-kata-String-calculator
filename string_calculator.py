@@ -5,10 +5,17 @@ import re
 class StringCalculator:
 
     def getStringAndDelimiter(self, string):
-        delimiter = "[, \\n]"
+        delimiter = "[,\\n]"
+        splited_string = re.split("\n", string, maxsplit=1)
         if string[0:2] == "//":
             splited_string = re.split("\n", string, maxsplit=1)
-            string, delimiter = splited_string[1], splited_string[0][2]
+            string, delimiter = splited_string[1], splited_string[0][2:]
+        elif string[0:3] == '0//':
+            delimiter = splited_string[0][3]
+            lst = splited_string[1].split(delimiter)
+            string = delimiter.join(lst[0::2])
+        else:
+            print("Invalid String")
         return string, delimiter
 
     def add(self, string_number):
@@ -39,3 +46,14 @@ class StringCalculator:
             if (negative_values):
                 raise ValueError(negative_values)
         return sum(lst)
+
+
+if __name__ == "__main__":
+    sc = StringCalculator()
+    # print(sc.add("0//;\n12;33;44;a;b;c"))
+    # print(sc.add("1\n2,3,4,5\na,b,8\nl\n10"))
+    # sc.add("-1,-2,3,-4")
+    # print(sc.add("1,2,3,4\n5,6,7,8,9,10"))
+    # print(sc.add("//;\n1;2;3;4;5"))
+    # print(sc.add("1,2,3,-4,5"))`      `
+    # print(sc.add("1,2,3,-4,5"))
