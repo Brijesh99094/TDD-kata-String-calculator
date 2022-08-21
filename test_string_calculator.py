@@ -9,4 +9,4 @@ class StringCalculatorTest(unittest.TestCase):
         self.sc = StringCalculator()
 
     def test_return_zero_if_string_is_empty(self):
-        self.assertEqual(self.sc.add(""), 6, "Must return 0 for empty string")
+        self.assertEqual(self.sc.add(""), 0, "Must return 0 for empty string")
