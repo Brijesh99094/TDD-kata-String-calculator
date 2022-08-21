@@ -33,7 +33,11 @@ class StringCalculatorTest(unittest.TestCase):
         self.assertRaises(ValueError, self.sc.add, "1,-2,-4,3")
 
     def test_throws_exception_with_list_of_negative_number(self):
-        self.assertRaises(ValueError, self.sc.add, "1,-2,-3,-4")
+        try:
+            self.sc.add("-1\n2,-3")
+        except ValueError as e:
+            print("Negative  not allowed", e)
+            self.assertEqual(str(e), "-1,-3")
 
     # optional
 

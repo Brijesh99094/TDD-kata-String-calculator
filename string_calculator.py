@@ -48,7 +48,11 @@ class StringCalculator:
                     lst.append(int(i))
 
             if (negative_values):
-                raise ValueError(negative_values)
+                s = ""
+                for i in negative_values:
+                    s += (str(i)+',')
+                s = s[0:len(s)-1]
+                raise ValueError(s)
         return sum(lst)
 
 
