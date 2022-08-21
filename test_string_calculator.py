@@ -27,3 +27,6 @@ class StringCalculatorTest(unittest.TestCase):
 
     def test_throws_exception_if_string_number_contains_negative_number(self):
         self.assertRaises(ValueError, self.sc.add, "1,-2,-4,3")
+
+    def test_throws_exception_with_list_of_negative_number(self):
+        self.assertRaises(ValueError, self.sc.add, "1,-2,-3,-4")
