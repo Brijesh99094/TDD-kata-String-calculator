@@ -11,9 +11,10 @@ class StringCalculator:
             splited_string = re.split("\n", string, maxsplit=1)
             string, delimiter = splited_string[1], splited_string[0][2:]
         elif string[0:3] == '0//':
-            delimiter = splited_string[0][3]
+            delimiter = splited_string[0][3:]
             lst = splited_string[1].split(delimiter)
             string = delimiter.join(lst[0::2])
+        
         else:
             print("Invalid String")
         return string, delimiter

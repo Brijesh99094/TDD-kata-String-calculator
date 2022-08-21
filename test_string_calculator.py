@@ -47,3 +47,6 @@ class StringCalculatorTest(unittest.TestCase):
     def test_with_defined_delimiter_in_string_number(self):
         self.assertEqual(self.sc.add("//;;\n1;;2;;3;;4;;5;;6;;7;;8;;9;;10"), 55,
                          "Must return sum with defined delimiter")
+
+    def test_if_zero_in_input_string_sum_element_of_odd_indices(self):
+        self.assertEqual(self.sc.add("0//;;\n12;;33;;44;;a;;b;;c"), 58)
