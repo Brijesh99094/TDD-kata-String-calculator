@@ -1,4 +1,3 @@
-from distutils.core import setup
 import unittest
 from string_calculator import StringCalculator
 
