@@ -19,6 +19,8 @@ class StringCalculator:
                 elif int(i) < 0:
                     negative_values.append(int(i))
                     #raise ValueError("Negative value not allowed")
+                elif int(i) > 1000:
+                    continue
                 else:
                     lst.append(int(i))
 

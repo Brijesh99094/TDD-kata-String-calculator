@@ -14,12 +14,14 @@ class StringCalculatorTest(unittest.TestCase):
     def test_return_number_if_string_has_one_number_only(self):
         self.assertEqual(self.sc.add("1"), 1,
                          "Must  return number passed in parameter")
-        self.assertEqual(self.sc.add("15"), 15,
-                         "Must  return number passed in parameter")
+        self.assertEqual(self.sc.add("995"), 995,
+                         "Must return single digit number")
 
     def test_return_sum_of_given_string_number(self):
         self.assertEqual(self.sc.add("1,2,3"), 6,
                          "Must return sum of given input string")
+        self.assertEqual(self.sc.add("1,2,3,4,5,6,7,8,9,10"), 55,
+                         "Must return the sum of the given string")
 
     def test_return_sum_of_given_string_with_alphabet(self):
         self.assertEqual(self.sc.add("1,a,2,b,3,c"), 12,
