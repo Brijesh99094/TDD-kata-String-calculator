@@ -14,7 +14,10 @@ class StringCalculator:
             delimiter = splited_string[0][3:]
             lst = splited_string[1].split(delimiter)
             string = delimiter.join(lst[0::2])
-        
+        elif string[0:3] == '1//':
+            delimiter = splited_string[0][3:]
+            lst = splited_string[1].split(delimiter)
+            string = delimiter.join(lst[1::2])
         else:
             print("Invalid String")
         return string, delimiter

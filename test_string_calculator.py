@@ -38,7 +38,6 @@ class StringCalculatorTest(unittest.TestCase):
     # optional
 
     # delimiter can be '\n' or ','
-
     def test_with_two_different_delimiter(self):
         self.assertEquals(self.sc.add("1,2,3\n4\n5\n6,7,8,9,10"),
                           55, "Must return sum with two different delimiter")
@@ -48,5 +47,11 @@ class StringCalculatorTest(unittest.TestCase):
         self.assertEqual(self.sc.add("//;;\n1;;2;;3;;4;;5;;6;;7;;8;;9;;10"), 55,
                          "Must return sum with defined delimiter")
 
+    # sum of all elements which are on odd indicies.
     def test_if_zero_in_input_string_sum_element_of_odd_indices(self):
         self.assertEqual(self.sc.add("0//;;\n12;;33;;44;;a;;b;;c"), 58)
+
+    # sum of all elements which are on even indicies.
+    def test_if_one_in_input_string_sum_elements_of_even_indices(self):
+        self.assertEqual(self.sc.add("1//;\n12;33;44;a;b;c"), 37)
+        self.assertEqual(self.sc.add("1//;;\n12;;b;;c"), 2)
