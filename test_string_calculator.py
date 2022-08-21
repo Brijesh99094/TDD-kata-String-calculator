@@ -24,3 +24,6 @@ class StringCalculatorTest(unittest.TestCase):
     def test_return_sum_of_given_string_with_alphabet(self):
         self.assertEqual(self.sc.add("1,a,2,b,3,c"), 12,
                          "Must return sum also including alphabet")
+
+    def test_throws_exception_if_string_number_contains_negative_number(self):
+        self.assertRaises(ValueError, self.sc.add, "1,-2,-4,3")

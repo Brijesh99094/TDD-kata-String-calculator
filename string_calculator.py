@@ -9,8 +9,11 @@ class StringCalculator:
 
             for i in string_number.split(","):
                 if not i.isdigit():
-                    num = ord(i) - 96
-                    lst.append(num)
+                    if len(i) == 1:
+                        num = ord(i) - 96
+                        lst.append(num)
+                    else:
+                        raise ValueError("Negative not allowed")
                 else:
                     lst.append(int(i))
             return sum(lst)
