@@ -16,3 +16,7 @@ class StringCalculatorTest(unittest.TestCase):
                          "Must  return number passed in parameter")
         self.assertEqual(self.sc.add("15"), 15,
                          "Must  return number passed in parameter")
+
+    def test_return_sum_of_given_string_number(self):
+        self.assertEqual(self.sc.add("1,2,3"), 6,
+                         "Must return sum of given input string")
