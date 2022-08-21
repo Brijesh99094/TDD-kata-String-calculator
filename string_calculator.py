@@ -1,4 +1,7 @@
 
+import re
+
+
 class StringCalculator:
 
     def add(self, string_number):
@@ -8,7 +11,7 @@ class StringCalculator:
         if len(string_number) >= 1:
             lst = list()
             negative_values = list()
-            for i in string_number.split(","):
+            for i in re.split("[\n,]", string_number):
                 if not i.isdigit():
                     if len(i) == 1:
                         num = ord(i) - 96

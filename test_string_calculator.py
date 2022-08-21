@@ -26,9 +26,17 @@ class StringCalculatorTest(unittest.TestCase):
     def test_return_sum_of_given_string_with_alphabet(self):
         self.assertEqual(self.sc.add("1,a,2,b,3,c"), 12,
                          "Must return sum also including alphabet")
+        self.assertEqual(self.sc.add("y,a,s,h"), 53,
+                         "Must return sum also including alphabet")
 
     def test_throws_exception_if_string_number_contains_negative_number(self):
         self.assertRaises(ValueError, self.sc.add, "1,-2,-4,3")
 
     def test_throws_exception_with_list_of_negative_number(self):
         self.assertRaises(ValueError, self.sc.add, "1,-2,-3,-4")
+
+    # optional
+    # delimiter can be '\n' or ','
+    def test_with_two_different_delimiter(self):
+        self.assertEquals(self.sc.add("1,2,3\n4\n5\n6,7,8,9,10"),
+                          55, "Must return sum with two different delimiter")
